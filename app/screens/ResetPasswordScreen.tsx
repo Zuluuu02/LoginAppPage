@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import TextInput from "../components/TextInput";
 import Button from "../components/Button";
 import { emailValidator } from "../helpers/emailValidator";
+import { View, Text } from 'react-native';
 
 export default function ResetPasswordScreen({ navigation }) {
   const [email, setEmail] = useState({ value: "", error: "" });
@@ -35,9 +36,13 @@ export default function ResetPasswordScreen({ navigation }) {
         autoCapitalize="none"
         autoCompleteType="email"
         textContentType="emailAddress"
-        keyboardType="email-address"
-        description="You will receive an email with the reset link."
-      />
+        keyboardType="email-address" description={undefined}      />
+
+      <View style={{ alignItems: 'center', marginTop: 10 }}>
+        <Text style={{ textAlign: 'center', color: '#6e6e6e' }}>
+          You will receive an email with the reset link.
+        </Text>
+      </View>
       <Button
         mode="contained"
         onPress={sendResetPasswordEmail}

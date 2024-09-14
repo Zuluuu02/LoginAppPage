@@ -10,9 +10,9 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Welcome to Xyrille's World</Header>
+      <Header>Welcome Trailblazers</Header>
       <Paragraph>
-        Lorem Ipsum.
+        Lorem Ipsum. Lorem Ipsum. 
       </Paragraph>
       <Button
         mode="contained"
