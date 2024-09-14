@@ -34,7 +34,7 @@ export default function LoginScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Hello.</Header>
+      <Header>Hello Sir/Guys.</Header>
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -65,7 +65,7 @@ export default function LoginScreen({ navigation }) {
         Log in
       </Button>
       <View style={styles.row}>
-        <Text>Don't Have An Account Yett ?</Text>
+        <Text>Don't Have An Account Yet ?</Text>
       </View>
       <View style={styles.row}>
         <TouchableOpacity onPress={() => navigation.replace("RegisterScreen")}>
