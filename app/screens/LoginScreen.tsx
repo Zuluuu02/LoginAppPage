@@ -53,7 +53,8 @@ export default function LoginScreen({ navigation }) {
         onChangeText={(text) => setPassword({ value: text, error: "" })}
         error={!!password.error}
         errorText={password.error}
-        secureTextEntry description={undefined}      />
+        secureTextEntry description={undefined}      
+        onSubmitEditing={onLoginPressed}  />
       <View style={styles.forgotPassword}>
         <TouchableOpacity
           onPress={() => navigation.navigate("ResetPasswordScreen")}
