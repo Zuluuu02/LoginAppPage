@@ -55,8 +55,7 @@ const LoginScreen = ({ navigation }) => {
         autoCapitalize="none"
         autoCompleteType="email"
         textContentType="emailAddress"
-        keyboardType="email-address"
-      />
+        keyboardType="email-address" description={undefined}      />
       <TextInput
         label="Password"
         returnKeyType="done"
@@ -65,14 +64,13 @@ const LoginScreen = ({ navigation }) => {
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
-        onSubmitEditing={handleLoginPress}
-      />
+        onSubmitEditing={handleLoginPress} description={undefined}      />
       <View style={styles.forgotPassword}>
         <TouchableOpacity onPress={handleForgotPasswordPress}>
           <Text style={[styles.forgot, { fontWeight: 'bold' }]}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>
-      <Button mode="contained" onPress={handleLoginPress}>
+      <Button mode="contained" onPress={handleLoginPress} style={undefined}>
         Log in
       </Button>
       <View style={styles.row}>
