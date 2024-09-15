@@ -15,7 +15,7 @@ export default function HomeScreen({ navigation }) {
      
       <Header style={styles.headerText}>Welcome Trailblazers</Header>
 
-    
+
       <Paragraph style={styles.paragraphText}>
         Congratulations, you are successfully logged in!
       </Paragraph>
