@@ -34,7 +34,15 @@ export default function LoginScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
+<<<<<<< Updated upstream
       <Header>Account Login</Header>
+=======
+<<<<<<< HEAD
+      <Header>Hello, Fellow Trailblazer!</Header>
+=======
+      <Header>Account Login</Header>
+>>>>>>> dfacc6ce3b0c74a3f7c524d40ba94edbfafc6692
+>>>>>>> Stashed changes
       <TextInput
         label="Email"
         returnKeyType="next"
