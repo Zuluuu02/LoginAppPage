@@ -34,15 +34,10 @@ export default function LoginScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-<<<<<<< Updated upstream
+      {/* Header text - I used "Account Login" here, but you can customize it if needed */}
       <Header>Account Login</Header>
-=======
-<<<<<<< HEAD
-      <Header>Hello, Fellow Trailblazer!</Header>
-=======
-      <Header>Account Login</Header>
->>>>>>> dfacc6ce3b0c74a3f7c524d40ba94edbfafc6692
->>>>>>> Stashed changes
+
+      {/* Email input */}
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -54,6 +49,8 @@ export default function LoginScreen({ navigation }) {
         autoCompleteType="email"
         textContentType="emailAddress"
         keyboardType="email-address" description={undefined}      />
+
+      {/* Password input */}
       <TextInput
         label="Password"
         returnKeyType="done"
@@ -62,28 +59,35 @@ export default function LoginScreen({ navigation }) {
         error={!!password.error}
         errorText={password.error}
         secureTextEntry description={undefined}      />
+
+      {/* Forgot password link */}
       <View style={styles.forgotPassword}>
         <TouchableOpacity
           onPress={() => navigation.navigate("ResetPasswordScreen")}
         >
-          <Text style={styles.forgot}>Forgot your password ?</Text>
+          <Text style={styles.forgot}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Login button */}
       <Button mode="contained" onPress={onLoginPressed} style={undefined}>
         Log in
       </Button>
+
+      {/* Sign-up link */}
       <View style={styles.row}>
-        <Text>Don’t Have an Account Yet?</Text>
+        <Text>Don’t have an account yet?</Text>
       </View>
       <View style={styles.row}>
         <TouchableOpacity onPress={() => navigation.replace("RegisterScreen")}>
-          <Text style={styles.link}>Create an Account</Text>
+          <Text style={styles.link}>Create an account</Text>
         </TouchableOpacity>
       </View>
     </Background>
   );
 }
 
+// Styles for the component
 const styles = StyleSheet.create({
   forgotPassword: {
     width: "100%",

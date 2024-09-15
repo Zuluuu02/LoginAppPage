@@ -9,23 +9,18 @@ import Button from "../components/Button";
 export default function HomeScreen({ navigation }) {
   return (
     <Background>
- 
+      {/* Logo component */}
       <Logo />
-<<<<<<< HEAD
-      <Header>Welcome Trailblazers</Header>
-      <Paragraph>You’ve successfully logged in.</Paragraph>
-=======
 
-     
+      {/* Header with text styling */}
       <Header style={styles.headerText}>Welcome Trailblazers</Header>
 
-
+      {/* Paragraph with styling */}
       <Paragraph style={styles.paragraphText}>
         Congratulations, you are successfully logged in!
       </Paragraph>
 
-    
->>>>>>> 9ab7dc15b99c18ffe07264cde2473cf1c493dcb5
+      {/* Sign out button */}
       <Button
         mode="outlined"
         onPress={() =>
@@ -42,6 +37,7 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
+// StyleSheet for styling components
 const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
@@ -53,10 +49,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     marginBottom: 40,
-    color: "#666", 
+    color: "#666", // Subtle text color
   },
   button: {
-    borderColor: "#6200EE", 
+    borderColor: "#6200EE", // Custom button border color
     borderWidth: 1,
     borderRadius: 5,
     paddingVertical: 10,
