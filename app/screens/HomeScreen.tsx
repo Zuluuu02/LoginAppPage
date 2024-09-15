@@ -11,7 +11,7 @@ export default function HomeScreen({ navigation }) {
     <Background>
       <Logo />
       <Header>Welcome Trailblazers</Header>
-      <Paragraph>You are logged in.</Paragraph>
+      <Paragraph>You've successfully logged in.</Paragraph>
       <Button
         mode="outlined"
         onPress={() => navigation.reset({
