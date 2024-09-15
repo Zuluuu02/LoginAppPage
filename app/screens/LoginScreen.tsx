@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Hello, Fellow Trailblazer!</Header>
+      <Header>Sign in</Header>
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -63,7 +63,7 @@ const LoginScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <Button mode="contained" onPress={handleLoginPress} style={undefined}>
-        Sign in
+        Log in
       </Button>
       <View style={styles.row}>
         <Text style={{ fontWeight: 'bold' }}>Don't Have An Account Yet?</Text>
