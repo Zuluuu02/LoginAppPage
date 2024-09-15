@@ -12,7 +12,7 @@ export default function StartScreen({ navigation }) {
 
       {/* Updated header with proper line break */}
       <Header>
-        Welcome to USTP{"\n"}Student Portal
+        Welcome to USTP{"\n"}   Student Portal
       </Header>
 
       {/* Updated paragraph content */}
