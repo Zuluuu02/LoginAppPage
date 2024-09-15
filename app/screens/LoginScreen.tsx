@@ -63,7 +63,7 @@ const LoginScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <Button mode="contained" onPress={handleLoginPress} style={undefined}>
-        Log in
+        Sign in
       </Button>
       <View style={styles.row}>
         <Text style={{ fontWeight: 'bold' }}>Don't Have An Account Yet?</Text>
