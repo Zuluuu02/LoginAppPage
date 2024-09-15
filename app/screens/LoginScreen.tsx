@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Hell, Fellow Trailblazer!</Header>
+      <Header>Hello, Fellow Trailblazer!</Header>
       <TextInput
         label="Email"
         returnKeyType="next"
