@@ -10,9 +10,9 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Welcome Trailblazers</Header>
+      <Header> Welcome to USTP<br></br>    Student Portal </Header>
       <Paragraph>
-        Lorem Ipsum. Lorem Ipsum. 
+      Advancing a Sustainable Future.
       </Paragraph>
       <Button
         mode="contained"
