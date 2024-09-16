@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
 
 import Background from "../components/Background";
 import Logo from "../components/Logo";
@@ -18,16 +19,30 @@ export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
 
+  const storeUserCredentials = async (email, password) => {
+    try {
+      await AsyncStorage.setItem('userEmail', email);
+      await AsyncStorage.setItem('userPassword', password);
+      console.log('User credentials stored');
+    } catch (e) {
+      console.error('Failed to save credentials');
+    }
+  };
+
   const onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
+
     if (emailError || passwordError || nameError) {
       setName({ ...name, error: nameError });
       setEmail({ ...email, error: emailError });
       setPassword({ ...password, error: passwordError });
       return;
     }
+
+    storeUserCredentials(email.value, password.value);
+
     navigation.reset({
       index: 0,
       routes: [{ name: "HomeScreen" }],
@@ -73,7 +88,7 @@ export default function RegisterScreen({ navigation }) {
         Next
       </Button>
       <View style={styles.row}>
-        <Text>I already have an account !</Text>
+        <Text>I already have an account!</Text>
       </View>
       <View style={styles.row}>
         <TouchableOpacity onPress={() => navigation.replace("LoginScreen")}>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
 
 import BackButton from '../components/BackButton';
 import Background from '../components/Background';
@@ -16,7 +17,18 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
 
-  const handleLoginPress = () => {
+  const getUserCredentials = async () => {
+    try {
+      const storedEmail = await AsyncStorage.getItem('userEmail');
+      const storedPassword = await AsyncStorage.getItem('userPassword');
+      return { storedEmail, storedPassword };
+    } catch (e) {
+      console.error('Failed to load credentials from storage');
+      return null;
+    }
+  };
+
+  const handleLoginPress = async () => {
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
 
@@ -26,10 +38,17 @@ const LoginScreen = ({ navigation }) => {
       return;
     }
 
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'HomeScreen' }],
-    });
+    const { storedEmail, storedPassword } = await getUserCredentials();
+
+    if (email.value === storedEmail && password.value === storedPassword) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }],
+      });
+    } else {
+      setEmail({ ...email, error: 'Invalid credentials' });
+      setPassword({ ...password, error: 'Invalid credentials' });
+    }
   };
 
   return (
@@ -55,7 +74,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
-        secureTextEntry
+        secureTextEntry={true} // Always hide password
         onSubmitEditing={handleLoginPress} description={undefined}      />
       <View style={styles.forgotPassword}>
         <TouchableOpacity onPress={() => navigation.navigate('ResetPasswordScreen')}>
