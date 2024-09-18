@@ -74,7 +74,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
-        secureTextEntry={true} // Always hide password
+        secureTextEntry={true}
         onSubmitEditing={handleLoginPress} description={undefined}      />
       <View style={styles.forgotPassword}>
         <TouchableOpacity onPress={() => navigation.navigate('ResetPasswordScreen')}>
