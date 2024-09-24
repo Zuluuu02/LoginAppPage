@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
 
 import BackButton from '../components/BackButton';
 import Background from '../components/Background';

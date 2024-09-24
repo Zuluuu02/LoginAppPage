@@ -20,6 +20,14 @@ export default function HomeScreen({ navigation }) {
         })} style={undefined}      >
         Sign out
       </Button>
+      <Button
+        mode="outlined"
+        onPress={() => navigation.reset({
+          index: 0,
+          routes: [{ name: "ListsScreen" }],
+        })} style={undefined}      >
+        Lists
+      </Button>
     </Background>
   );
 }

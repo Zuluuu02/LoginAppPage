@@ -2,13 +2,12 @@
   "expo": {
     "name": "Login Page",
     "slug": "Login Page",
-    "scheme": "Login Page",
     "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/app.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/app.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
