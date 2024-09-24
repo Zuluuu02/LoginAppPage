@@ -2,6 +2,7 @@
   "expo": {
     "name": "Login Page",
     "slug": "Login Page",
+    "scheme": "Login Page",
     "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/app.png",
@@ -22,6 +23,9 @@
     },
     "web": {
       "favicon": "./assets/app.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
