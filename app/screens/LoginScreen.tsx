@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage'; 
-
 import BackButton from '../components/BackButton';
 import Background from '../components/Background';
 import Button from '../components/Button';
@@ -31,21 +30,23 @@ const LoginScreen = ({ navigation }) => {
   const handleLoginPress = async () => {
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
-
+  
     if (emailError || passwordError) {
       setEmail({ ...email, error: emailError });
       setPassword({ ...password, error: passwordError });
       return;
     }
-
+  
     const { storedEmail, storedPassword } = await getUserCredentials();
-
+  
     if (email.value === storedEmail && password.value === storedPassword) {
+     
       navigation.reset({
         index: 0,
         routes: [{ name: 'HomeScreen' }],
       });
     } else {
+    
       setEmail({ ...email, error: 'Invalid credentials' });
       setPassword({ ...password, error: 'Invalid credentials' });
     }
@@ -53,7 +54,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <Background>
-      <BackButton goBack={navigation.goBack} />
+       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Sign in</Header>
       <TextInput
@@ -77,7 +78,7 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry={true}
         onSubmitEditing={handleLoginPress} description={undefined}      />
       <View style={styles.forgotPassword}>
-        <TouchableOpacity onPress={() => navigation.navigate('ResetPasswordScreen')}>
+      <TouchableOpacity onPress={() => navigation.navigate('ResetPasswordScreen')}>
           <Text style={[styles.forgot, { fontWeight: 'bold' }]}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>

@@ -27,4 +27,4 @@ export default function StartScreen({ navigation }) {
       </Button>
     </Background>
   );
-}
+};
